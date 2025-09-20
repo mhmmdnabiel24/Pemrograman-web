@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 245px;
+            height: 100vh;
+            background-color: #000;
+            border-right: 1px solid #262626;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .sidebar .logo {
+            font-size: 35px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Grand Hotel', cursive;
+        }
+        
+        .sidebar .nav-link {
+            color: #fff;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        .sidebar .nav-link:hover {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        
+        .sidebar .nav-link.active {
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .sidebar .nav-link i {
+            width: 24px;
+            font-size: 24px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-left: 245px;
+            padding: 30px;
+            max-width: 935px;
+        }
+        
+        /* Profile Header */
+        .profile-pic-container {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            border-radius: 50%;
+            padding: 3px;
+            overflow: hidden;
+        }
+        
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            background-color: #262626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #8e8e8e;
+        }
+        
+        .profile-username {
+            font-size: 20px;
+            font-weight: 300;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-stats .stat-number {
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .profile-stats span {
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .profile-bio .bio-name {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        
+        .profile-bio .bio-quote {
+            color: #fff;
+        }
+        
+        /* Profile Action Buttons */
+        .btn-profile {
+            background-color: #363636;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 8px;
+        }
+        
+        .btn-profile:hover {
+            background-color: #262626;
+            color: #fff;
+        }
+        
+        /* Story Highlights */
+        .highlight-circle {
+            width: 77px;
+            height: 77px;
+            border: 2px solid #262626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #8e8e8e;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            overflow: hidden;
+        }
+        
+        .highlight-circle:hover {
+            border-color: #555;
+        }
+        
+        .highlight-new .highlight-circle {
+            border-style: dashed;
+        }
+        
+        .highlight-title {
+            font-size: 12px;
+            color: #8e8e8e;
+            text-align: center;
+            margin-top: 12px;
+        }
+        
+        /* Posts Section */
+        .posts-section {
+            border-top: 1px solid #262626;
+            padding-top: 24px;
+        }
+        
+        .posts-nav .nav-link {
+            color: #8e8e8e;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-top: 1px solid transparent;
+            padding: 12px 24px;
+        }
+        
+        .posts-nav .nav-link.active {
+            color: #fff;
+            border-top-color: #fff;
+        }
+        
+        .posts-nav .nav-link:hover {
+            color: #fff;
+        }
+        
+        /* Posts Grid */
+        .post-item {
+            aspect-ratio: 16 / 9;
+            background-color: #262626;
+            overflow: hidden;
+        }
+        
+        
+        .post-content {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #333, #555);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+    </style>
+    
+</head>
+<body>
+       <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="p-3 pb-0">
+            <a href="#" class="logo text-decoration-none">Instagram</a>
+        </div>
+        
+        <nav class="nav flex-column p-3">
+            <a class="nav-link d-flex align-items-center mb-2" href="#">
+                <i class="fas fa-home me-3"></i>
+                <span>Home</span>
+            </a>
+            <a class="nav-link d-flex align-items-center mb-2" href="#">
+                <i class="fas fa-search me-3"></i>
+                <span>Search</span>
+            </a>
+            <a class="nav-link d-flex align-items-center mb-2" href="#">
+                <i class="far fa-compass me-3"></i>
+                <span>Explore</span>
+            </a>
+            <a class="nav-link d-flex align-items-center mb-2" href="#">
+                <i class="fas fa-film me-3"></i>
+                <span>Reels</span>
+            </a>
+            <a class="nav-link d-flex align-items-center mb-2 position-relative" href="#">
+                <i class="far fa-paper-plane me-3"></i>
+                <span>Messages</span>
+            </a>
+            <a class="nav-link d-flex align-items-center mb-2 position-relative" href="#">
+                <i class="far fa-heart me-3"></i>
+                <span>Notifications</span>
+            </a>
+            <a class="nav-link d-flex align-items-center mb-2" href="#">
+                <i class="far fa-plus-square me-3"></i>
+                <span>Create</span>
+            </a>
+            <a class="nav-link d-flex align-items-center mb-2 active" href="#">
+                <i class="far fa-user-circle me-3"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Profile Header -->
+        <div class="row align-items-center mb-5">
+            <div class="col-auto">
+                <div class="profile-pic-container me-4">
+                    <div class="profile-pic">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvJT06Ijnkq_WxAkHzCBHc5JtvNj2kZS0dRw&s" alt="pp ig">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex align-items-center mb-3">
+                    <h1 class="profile-username me-4">Mhmmd_nabiell<img src="centang.png" alt="centang biru" width="25"></h1>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-profile px-3 py-1">Edit profile</button>
+                        <button class="btn btn-profile px-3 py-1">View archive</button>
+                        <button class="btn btn-profile px-2 py-1">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="profile-stats d-flex gap-4 mb-3">
+                    <span><span class="stat-number">3</span> posts</span>
+                    <span><span class="stat-number">999M</span> followers</span>
+                    <span><span class="stat-number">1</span> following</span>
+                </div>
+                
+                <div class="profile-bio">
+                    <div class="bio-name">δναπαξία</div>
+                    <div class="bio-quote">"Tugas Pemrograman"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Story Highlights -->
+        <div class="d-flex gap-4 mb-5">
+            <div class="highlight text-center">
+                <div class="highlight-circle">
+                 <img src="https://i.pinimg.com/736x/7d/7b/a4/7d7ba400ebbfa74b8fbdab390eb5c4d5.jpg" alt="1">   
+                </div>
+            </div>
+            <div class="highlight text-center">
+                <div class="highlight-circle">
+                    <img src="https://i.pinimg.com/736x/b1/12/94/b11294c4a4bbaefee9fe985dbc7ba95d.jpg" alt="2">
+                </div>
+            </div>
+            <div class="highlight text-center">
+                <div class="highlight-circle">
+                    <img src="https://i.pinimg.com/originals/ae/16/59/ae1659126d47565edc5428e77f078e34.jpg" alt="3">
+                </div>
+            </div>
+        </div>
+
+        <!-- Posts Section -->
+        <div class="posts-section">
+            <div class="posts-nav d-flex justify-content-center mb-4">
+                <a href="#" class="nav-link active d-flex align-items-center">
+                    <i class="fas fa-th me-2"></i>
+                    Posts
+                </a>
+                <a href="#" class="nav-link d-flex align-items-center">
+                    <i class="far fa-bookmark me-2"></i>
+                    Saved
+                </a>
+                <a href="#" class="nav-link d-flex align-items-center">
+                    <i class="far fa-user me-2"></i>
+                    Tagged
+                </a>
+            </div>
+
+            <div class="row g-1">
+                <!-- Post 1 -->
+                <div class="col-4">
+                    <div class="post-item">
+                        <div class="post-content">
+                            <div>
+                                <img src="https://tribratanews.polri.go.id/web/image/blog.post/52546/image" alt="post1">
+                                <div class="mt-3 small">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 2 -->
+                <div class="col-4">
+                    <div class="post-item">
+                        <div class="post-content">
+                            <div>
+                                <div class="mb-3">
+                                    <img src="https://i.pinimg.com/originals/83/ce/a5/83cea5b804495b659b5e5a072f65f317.jpg" alt="post2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 3 -->
+                <div class="col-4">
+                    <div class="post-item">
+                        <div class="post-content">
+                            <div>
+                                <div class="mb-3">
+                                   <img src="https://i2.wp.com/blog.tripcetera.com/id/wp-content/uploads/2020/10/Danau-Toba-edited.jpg" alt="post3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</html>

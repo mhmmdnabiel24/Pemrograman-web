@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas pemrograman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .font-grand-hotel {
+            font-family: 'Grand Hotel', cursive;
+        }
+        
+        .gradient-border {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+        
+        .post-gradient {
+            background: linear-gradient(135deg, #333, #555);
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+    <!-- Sidebar Navigation -->
+    <div class="fixed left-0 top-0 w-64 h-screen bg-black border-r border-gray-700 z-50 overflow-y-auto">
+        <div class="p-3 pb-0">
+            <a href="#" class="font-grand-hotel text-white text-4xl font-bold no-underline">Instagram</a>
+        </div>
+        
+        <nav class="flex flex-col p-3">
+            <a class="flex items-center text-white no-underline rounded-lg transition-all duration-200 text-base font-normal px-3 py-2 mb-2 hover:bg-gray-900" href="#">
+                <i class="fas fa-home w-6 text-2xl mr-3"></i>
+                <span>Home</span>
+            </a>
+            <a class="flex items-center text-white no-underline rounded-lg transition-all duration-200 text-base font-normal px-3 py-2 mb-2 hover:bg-gray-900" href="#">
+                <i class="fas fa-search w-6 text-2xl mr-3"></i>
+                <span>Search</span>
+            </a>
+            <a class="flex items-center text-white no-underline rounded-lg transition-all duration-200 text-base font-normal px-3 py-2 mb-2 hover:bg-gray-900" href="#">
+                <i class="far fa-compass w-6 text-2xl mr-3"></i>
+                <span>Explore</span>
+            </a>
+            <a class="flex items-center text-white no-underline rounded-lg transition-all duration-200 text-base font-normal px-3 py-2 mb-2 hover:bg-gray-900" href="#">
+                <i class="fas fa-film w-6 text-2xl mr-3"></i>
+                <span>Reels</span>
+            </a>
+            <a class="flex items-center text-white no-underline rounded-lg transition-all duration-200 text-base font-normal px-3 py-2 mb-2 hover:bg-gray-900 relative" href="#">
+                <i class="far fa-paper-plane w-6 text-2xl mr-3"></i>
+                <span>Messages</span>
+            </a>
+            <a class="flex items-center text-white no-underline rounded-lg transition-all duration-200 text-base font-normal px-3 py-2 mb-2 hover:bg-gray-900 relative" href="#">
+                <i class="far fa-heart w-6 text-2xl mr-3"></i>
+                <span>Notifications</span>
+            </a>
+            <a class="flex items-center text-white no-underline rounded-lg transition-all duration-200 text-base font-normal px-3 py-2 mb-2 hover:bg-gray-900" href="#">
+                <i class="far fa-plus-square w-6 text-2xl mr-3"></i>
+                <span>Create</span>
+            </a>
+            <a class="flex items-center text-white no-underline rounded-lg transition-all duration-200 text-base font-semibold px-3 py-2 mb-2 hover:bg-gray-900" href="#">
+                <i class="far fa-user-circle w-6 text-2xl mr-3"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64 p-8 max-w-4xl">
+        <!-- Profile Header -->
+        <div class="flex items-center mb-12">
+            <div class="mr-8">
+                <div class="w-36 h-36 gradient-border rounded-full p-1 overflow-hidden">
+                    <div class="w-full h-full bg-gray-700 rounded-full flex items-center justify-center text-5xl text-gray-400">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvJT06Ijnkq_WxAkHzCBHc5JtvNj2kZS0dRw&s" alt="Profile Picture" class="w-full h-full object-cover rounded-full">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex-1">
+                <div class="flex items-center mb-5">
+                    <h1 class="text-xl font-light text-white mr-8 flex items-center">
+                        Mhmmd_nabiell
+                        <img src="centang.png" alt="Verified Badge" class="w-6 ml-2">
+                    </h1>
+                    <div class="flex gap-2">
+                        <button class="bg-gray-700 border-none text-white font-semibold text-sm rounded-lg px-4 py-2 hover:bg-gray-600">
+                            Edit profile
+                        </button>
+                        <button class="bg-gray-700 border-none text-white font-semibold text-sm rounded-lg px-4 py-2 hover:bg-gray-600">
+                            View archive
+                        </button>
+                        <button class="bg-gray-700 border-none text-white font-semibold text-sm rounded-lg px-3 py-2 hover:bg-gray-600">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex gap-8 mb-5">
+                    <span class="text-white text-base">
+                        <span class="font-semibold">3</span> posts
+                    </span>
+                    <span class="text-white text-base">
+                        <span class="font-semibold">999M</span> followers
+                    </span>
+                    <span class="text-white text-base">
+                        <span class="font-semibold">1</span> following
+                    </span>
+                </div>
+                
+                <div>
+                    <div class="font-semibold text-white mb-1">δναπαξία</div>
+                    <div class="text-white">"Tugas Pemrograman"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Story Highlights -->
+        <div class="flex gap-8 mb-12">
+            <div class="text-center">
+                <div class="w-20 h-20 border-2 border-gray-700 rounded-full flex items-center justify-content-center text-2xl text-gray-400 cursor-pointer transition-all duration-200 hover:border-gray-500 overflow-hidden">
+                    <img src="https://i.pinimg.com/736x/7d/7b/a4/7d7ba400ebbfa74b8fbdab390eb5c4d5.jpg" alt="Highlight 1" class="w-full h-full object-cover rounded-full">
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="w-20 h-20 border-2 border-gray-700 rounded-full flex items-center justify-content-center text-2xl text-gray-400 cursor-pointer transition-all duration-200 hover:border-gray-500 overflow-hidden">
+                    <img src="https://i.pinimg.com/736x/b1/12/94/b11294c4a4bbaefee9fe985dbc7ba95d.jpg" alt="Highlight 2" class="w-full h-full object-cover rounded-full">
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="w-20 h-20 border-2 border-gray-700 rounded-full flex items-center justify-content-center text-2xl text-gray-400 cursor-pointer transition-all duration-200 hover:border-gray-500 overflow-hidden">
+                    <img src="https://i.pinimg.com/originals/ae/16/59/ae1659126d47565edc5428e77f078e34.jpg" alt="Highlight 3" class="w-full h-full object-cover rounded-full">
+                </div>
+            </div>
+        </div>
+
+        <!-- Posts Section -->
+        <div class="border-t border-gray-700 pt-6">
+            <div class="flex justify-center mb-8">
+                <a href="#" class="flex items-center text-white no-underline text-xs font-semibold uppercase tracking-wider border-t border-white px-6 py-3">
+                    <i class="fas fa-th mr-2"></i>
+                    Posts
+                </a>
+                <a href="#" class="flex items-center text-gray-400 no-underline text-xs font-semibold uppercase tracking-wider border-t border-transparent px-6 py-3 hover:text-white">
+                    <i class="far fa-bookmark mr-2"></i>
+                    Saved
+                </a>
+                <a href="#" class="flex items-center text-gray-400 no-underline text-xs font-semibold uppercase tracking-wider border-t border-transparent px-6 py-3 hover:text-white">
+                    <i class="far fa-user mr-2"></i>
+                    Tagged
+                </a>
+            </div>
+
+            <div class="grid grid-cols-3 gap-1">
+                <!-- Post 1 -->
+                <div class="aspect-video bg-gray-700 overflow-hidden">
+                    <div class="w-full h-full post-gradient flex items-center justify-center text-center p-5">
+                        <div>
+                            <img src="https://tribratanews.polri.go.id/web/image/blog.post/52546/image" alt="Post 1" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 2 -->
+                <div class="aspect-video bg-gray-700 overflow-hidden">
+                    <div class="w-full h-full post-gradient flex items-center justify-center text-center p-5">
+                        <div>
+                            <img src="https://i.pinimg.com/originals/83/ce/a5/83cea5b804495b659b5e5a072f65f317.jpg" alt="Post 2" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 3 -->
+                <div class="aspect-video bg-gray-700 overflow-hidden">
+                    <div class="w-full h-full post-gradient flex items-center justify-center text-center p-5">
+                        <div>
+                            <img src="https://i2.wp.com/blog.tripcetera.com/id/wp-content/uploads/2020/10/Danau-Toba-edited.jpg" alt="Post 3" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
