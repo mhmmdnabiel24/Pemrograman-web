@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css selector</title>
+    <link rel="stylesheet" href="latihan2.css">
+</head>
+<body>
+    <h1>Belajar CSS Selector</h1>
+
+
+    <!-- selector element -->
+     <p>ini adalah paragraf biasa yang menggunakan element selector</p>
+
+    <!-- selector class -->
+    <p class="highlight">ini adalah paragraf yang menggunakan class "hightllght"</p>
+    <p class="warning">Paragraf ini menggunakan clas "warning"</p>
+    <p class="hightlight">Paragraf lain dengan class "hightlight" yang sama</p>
+
+
+    <!-- selector id -->
+     <p id=""special>
+        Paragraf ini menggunakan id "special"(hanya boleh satu)
+     </p>
+
+     <!-- multiple class -->
+      <p class=""hightlight border>
+paragraf dengan dua class: "hightlight" dan "border"
+      </p>
+
+      <!-- descendant selector -->
+       <div class="container">
+            <h2>Heading di dalam container</h2>
+            <p>paragraf di dalam container</p>
+            <div class="inner">
+                <p>paragraf di dalam inner</p>
+            </div>
+       </div>
+
+       <!-- child selector -->
+        <ul class="menu">
+            <li>
+                menu item 1
+                <ul>
+                    <li>sub menu 1</li>
+                    <li>sub menu 2</li>
+                </ul>
+            </li>
+            <li>menu item 2</li>
+            <li>menu item 3</li>
+        </ul>
+
+        <!-- pseudo-class selector -->
+         <div class=""links>
+            <h3>Link Example</h3>
+            <a href="#link1">link normal</a><br>
+            <a href="#link2">link kedua</a>
+            <a href="#link3">link ketiga</a>
+         </div>
+
+         <!-- attribute selector -->
+          <div class="form">
+            <h3>Form Element</h3>
+            <input type="text" placeholder="text input"><br>
+            <input type="email" placeholder="email input"><br>
+            <input type="password" placeholder="password input"><br>
+            <input type="button" value="button">
+          </div>
+
+          <!-- Grouping Selector-->
+           <h4>Heading 4</h4>
+           <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+</body>
+</html>
