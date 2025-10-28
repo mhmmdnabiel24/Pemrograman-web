@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS Pemrograman Web</title>
+
+    <style>
+      body {
+    background-color: #f4f4f9;
+  }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid grey;
+      border-radius: 5px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;      
+      width: 350px;
+      margin: 0 auto;
+      float: left;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+        
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    input::placeholder,
+    select::placeholder,
+    textarea::placeholder {
+      color: #999;
+    }
+    </style>
+
+</head>
+<body>
+<form id="formMahasiswa">
+    <h1>Input Data</h1>
+
+    <label for="nama">Nama</label>
+    <input type="text" id="nama" required placeholder="Masukan Nama">
+
+    <label for="nim">NIM</label>
+    <input type="text" id="nim" required >
+
+    <label for="semester">Semester</label>
+    <input type="text" id="semester" required >
+
+    <label for="prodi">Program Study</label>
+    <select id="prodi" required>
+      <option value="">--Pilih--</option>
+      <option>TI</option>
+      <option>Sisfor</option>
+      <option>TM</option>
+    </select>
+
+    <label for="Email">Email</label>
+    <input type="text" id="Email" required placeholder="Masukan Email">
+
+    <button type="button" onclick="tambahData()">Kirim Data</button>
+
+</form>
+
+<table id="tabelMahasiswa">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>INFO</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+<script>
+    let nomor = 1;
+    function tambahData() {
+
+      let nama = document.getElementById("nama").value;
+      let semester = document.getElementById("semester").value;
+      let prodi = document.getElementById("prodi").value;
+
+      console.log("Data Mahasiswa:");
+      console.log("Nama:", nama);
+      console.log("semester:", semester);
+      console.log("prodi:", prodi);
+
+      if (nama === "" || nim === "" || prodi === "") {
+        alert("Isi semua data terlebih dahulu!");
+        return;
+      }
+
+      let tabel = document.getElementById("tabelMahasiswa").getElementsByTagName("tbody")[0];
+      let barisBaru = tabel.insertRow();
+
+      barisBaru.insertCell(0).innerText = nomor++;
+      barisBaru.insertCell(1).innerText = nama;
+      barisBaru.insertCell(2).innerText = prodi, semester;
+      barisBaru.insertCell(3).innerText = semester;
+
+      document.getElementById("formMahasiswa").reset();
+    }
+  </script>
+
+</body>
+</html>
